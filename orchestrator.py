@@ -18,7 +18,16 @@ def linuxa():
 
         securied_data = security_func(validationo_data)
 
-        result = executer_func(securied_data)
+        if securied_data =="confirm":
+    
+            response=input("Are you sure you want to contiuno Y or N").lower()
+
+            if response !="y":
+                print("Cancelled")
+                
+                return 
+
+        result = executer_func(validationo_data)
 
         # print(f"{audio} \n {text}\n {json_data}\n {validationo_data}\n {securied_data}\n {result}")
 
