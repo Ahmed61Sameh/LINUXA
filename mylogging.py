@@ -14,6 +14,6 @@ def getlogger(name):
 
     return logger
     
-logger= getlogger("Ahmed")          #اسم صاحب الموديول 
+logger= getlogger("Ahmed")         
 logger.info("kalam kter malosh da3y ")        
 
