@@ -75,7 +75,7 @@ def open_item(kind, name):
         elif kind == "folder" :
             path = find_folder_location(name) 
             if path is None :
-                 path = find_path(name ,"folder")
+                path = find_path(name ,"folder")
             if path is None :
                 return {"status" : "error"   , "message" : f"folder {name} not found"}
             subprocess.Popen(["xdg-open" , path])
@@ -96,15 +96,12 @@ def open_item(kind, name):
 
 
 
-# c = open_item("app" , "firefox")
-# print(c)            
-
-# c = open_item("folder" , "kok")
-
-# print(c)          
-
-# c= open_item("file" , "z.txt")
-# print(c)
+c = open_item("app" , "firefox")
+print(c)           
+c = open_item("folder" , "kok")
+print(c)         
+c= open_item("file" , "z.txt")
+print(c)
 
 
 def close_item(kind , name ):
@@ -308,7 +305,7 @@ def rename_file(old_name,new_name):
 
         path_1 = os.path.join(os.path.dirname(path),os.path.basename(new_name))
         if os.path.exists(path_1):
-             return {"status" : "error" , "message" : f"{new_name} already exists"}
+            return {"status" : "error" , "message" : f"{new_name} already exists"}
 
         os.rename(path,path_1)
         return {"status" : "success" , "message" : f"{old_name} renamed to {new_name}"}
